@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
       res.sendStatus(201);
     })
     .catch((err) => {
-      console.error(`ERROR in '/' POST query ${err}`);
+      console.error(`ERROR in '/' POST query: ${err}`);
       res.sendStatus(500);
     });
   
@@ -53,6 +53,25 @@ router.post('/', (req, res) => {
 });  
 
 // PUT
+// UPDATE to mark complete route
+router.put('/markComplete/:taskID', (req, res) => {
+// Set queryText
+const queryText = `UPDATE task_list SET complete = 'true' WHERE id = $1;`;
+const queryArgs = [req.params.taskID];
+
+pool
+  .query(queryText, queryArgs)
+  .then((result) => {
+    console.log(`Task with ID ${req.params.taskID} marked complete in DB.`);
+    res.sendStatus(201);
+  })
+  .catch((err) => {
+    console.error(`ERROR in '/markComplete:taskID' query: ${err}`);
+    res.sendStatus(500);
+  });
+
+
+});
 
 // DELETE
 
