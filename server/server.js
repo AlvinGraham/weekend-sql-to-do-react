@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const taskRouter = require('./routes/task.router.js');
+const tasksRouter = require('./routes/tasks.router.js');
 const PORT = process.env.PORT || 5001;
 
 /** ---------- MIDDLEWARE ---------- **/
@@ -8,7 +8,7 @@ app.use(express.json()); // needed for axios requests
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-app.use('/api/task', taskRouter);
+app.use('/api/tasks', tasksRouter);
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {
