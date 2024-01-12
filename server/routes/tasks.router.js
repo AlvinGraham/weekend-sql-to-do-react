@@ -55,24 +55,41 @@ router.post('/', (req, res) => {
 // PUT
 // UPDATE to mark complete route
 router.put('/markComplete/:taskID', (req, res) => {
-// Set queryText
-const queryText = `UPDATE task_list SET complete = 'true' WHERE id = $1;`;
-const queryArgs = [req.params.taskID];
+  // Set queryText
+  const queryText = `UPDATE task_list SET complete = 'true' WHERE id = $1;`;
+  const queryArgs = [req.params.taskID];
 
-pool
-  .query(queryText, queryArgs)
-  .then((result) => {
-    console.log(`Task with ID ${req.params.taskID} marked complete in DB.`);
-    res.sendStatus(201);
-  })
-  .catch((err) => {
-    console.error(`ERROR in '/markComplete:taskID' query: ${err}`);
-    res.sendStatus(500);
-  });
-
-
+  pool
+    .query(queryText, queryArgs)
+    .then((result) => {
+      console.log(`Task with ID ${req.params.taskID} marked complete in DB.`);
+      res.sendStatus(201);
+    })
+    .catch((err) => {
+      console.error(`ERROR in '/markComplete:taskID' query: ${err}`);
+      res.sendStatus(500);
+    });
 });
 
 // DELETE
+// Delete an entry by ID
+router.delete('/removeTask/:taskID', (req, res) =>{
+  //set queryText
+  const queryText = `DELETE FROM task_list WHERE id = $1;`;
+  const queryArgs = [req.params.taskID];
+
+  pool
+    .query(queryText, queryArgs)
+    .then((result) => {
+      console.log(`Task with ID ${queryArgs[0]} removed from DB.`);
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.error(`ERROR in '/removeTask/:taskID' query: ${err}`);
+      res.sendStatus(500);
+    });
+
+
+});
 
 module.exports = router;
