@@ -12,4 +12,5 @@ CREATE TABLE "task_list" (
 INSERT INTO "task_list" ("title", "description", "priority", "complete")
 VALUES ('Urgent Task', 'I am a high priority task', 'high', 'false'),
 ('Routine Task', 'I am a medium priority task', 'medium', 'false'),
-('Trivial Task', 'I am a low priority task', 'low', 'false');
+('Trivial Task', 'I am a low priority task', 'low', 'false'),
+('Completed Task', 'I am a task that has already been completed', 'medium', 'true');
