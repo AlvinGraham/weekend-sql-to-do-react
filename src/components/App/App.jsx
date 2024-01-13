@@ -1,13 +1,33 @@
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
+import { getTasks } from '../../tasksApi/tasks.Api'
 import Header from '../Header/Header';
 import AddTask from '../AddTask/AddTask';
 
 function App () {
+  const [taskList, setTaskList] = useState([]);
+
+  const refreshTaskList = () => {
+    // call getTasks from API
+    getTasks()
+    .then((response) => {
+      console.log("Received task list from server");
+      console.table(response.data);
+      setTaskList(response.data);
+    })
+    .catch((err) => {
+      console.error(`ERROR in client '/' GET route: ${e}`);
+    });
+  }
+
+  // Initial tasklist load
+  useEffect(() => {
+    refreshTaskList();
+  }, []);
   
   return (
     <div>
       <Header />
-      <AddTask />
+      <AddTask refreshTaskListCallback={refreshTaskList}/>
     </div>
   );
 

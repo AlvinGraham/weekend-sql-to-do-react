@@ -21,7 +21,7 @@ export default function AddTask (props) {
     postTask(newTask)
     .then((response) => {
       // TO-DO Refresh Display of Task List
-      
+      props.refreshTaskListCallback();
       // Reset Inputs
       setTitleInputValue('');
       setDescriptionInputValue('');
