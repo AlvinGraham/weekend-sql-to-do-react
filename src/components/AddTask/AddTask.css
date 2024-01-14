@@ -1,0 +1,55 @@
+#AddTaskDiv {
+  border-bottom: 2px solid gold;
+  padding-bottom: 20px;
+}
+
+#AddTaskDiv h2 {
+  text-align: center;
+  margin: 10px 0px;
+}
+
+#entryAreas {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#textInputs textarea {
+  margin-left: 5px;
+}
+
+#titleInput {
+  width: 250px;
+  margin-left: 5px;
+}
+
+#titleLabel {
+
+  display: flex;
+  align-items: center;
+  
+}
+
+#descriptionLabel {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  
+}
+
+#descriptionInput {
+  width: 200px;
+  height: 70px;
+  resize: none;
+}
+
+#radioInputs {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 5px;
+}
+
+/* #buttonInputs {
+
+} */

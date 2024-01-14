@@ -1,0 +1,44 @@
+.taskCard {
+    border: 1px solid gold;
+    border-radius: 10px;;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: left;
+    margin: 10px 10px;
+}
+
+.titleField {
+  padding: 10px;
+  border-bottom: 1px solid gold;
+}
+
+.titleField h4 {
+  margin: 0px;
+}
+
+
+
+
+
+
+
+
+/* section colors */
+
+.red {
+  background-color: red;
+  color: gold;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.green {
+  background-color: green;
+  color: black;
+}

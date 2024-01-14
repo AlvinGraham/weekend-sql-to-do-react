@@ -1,0 +1,17 @@
+#displayTasksDiv {
+  background-color: olivedrab;
+  min-height: 300px;
+}
+
+#displayTasksDiv h2 {
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 20px;
+}
+
+.cardField {
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+}

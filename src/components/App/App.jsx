@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { getTasks } from '../../tasksApi/tasks.Api'
 import Header from '../Header/Header';
 import AddTask from '../AddTask/AddTask';
+import DisplayTasks from '../DisplayTasks/DisplayTasks';
 
 function App () {
   const [taskList, setTaskList] = useState([]);
@@ -28,6 +29,7 @@ function App () {
     <div>
       <Header />
       <AddTask refreshTaskListCallback={refreshTaskList}/>
+      <DisplayTasks taskListState={taskList} refreshTaskListCallback={refreshTaskList}/>
     </div>
   );
 
