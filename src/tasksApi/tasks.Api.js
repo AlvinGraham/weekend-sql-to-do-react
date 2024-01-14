@@ -7,3 +7,7 @@ export const postTask = (taskData) => {
 export const getTasks = () => {
   return axios.get('/api/tasks');
 };
+
+export const deleteTask = (taskId) => {
+  return axios.delete(`/api/tasks/removeTask/${taskId}`);
+};

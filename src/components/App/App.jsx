@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getTasks } from '../../tasksApi/tasks.Api'
+import { getTasks } from '../../tasksApi/tasks.Api';
 import Header from '../Header/Header';
 import AddTask from '../AddTask/AddTask';
 import DisplayTasks from '../DisplayTasks/DisplayTasks';
