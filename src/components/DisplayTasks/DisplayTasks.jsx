@@ -9,6 +9,7 @@ export default function DisplayTasks (props) {
       <h2>TASK LIST</h2>
       <div className="cardField">
         {(props.taskListState).map((taskItem, itemIndex) => {
+          // console.log('ItemIndex:', itemIndex);
           return <TaskCard key={itemIndex} 
           itemCardData={taskItem} refreshTaskListCallback={props.refreshTaskListCallback} />
         })}
