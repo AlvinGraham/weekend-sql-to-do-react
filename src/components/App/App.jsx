@@ -12,7 +12,7 @@ function App () {
     getTasks()
     .then((response) => {
       console.log("Received task list from server");
-      console.table(response.data);
+      // console.table(response.data);
       setTaskList(response.data);
     })
     .catch((err) => {

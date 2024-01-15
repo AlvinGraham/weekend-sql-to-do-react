@@ -3,7 +3,7 @@ import './DisplayTasks.css';
 import { useState } from 'react';
 
 export default function DisplayTasks (props) {
- console.log('DisplayTasks.props', props);
+  console.log('DisplayTasks.props', props);
   return (
     <div id="displayTasksDiv">
       <h2>TASK LIST</h2>

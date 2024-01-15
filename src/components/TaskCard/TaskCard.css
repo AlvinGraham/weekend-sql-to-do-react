@@ -2,18 +2,43 @@
     border: 1px solid gold;
     border-radius: 10px;;
     min-height: 200px;
-    width: 200px;
+    width: 300px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
     align-items: left;
     margin: 10px 10px;
+    background-color: black;
+    color: gold;
 }
+
+input[type=checkbox] {
+  transform: scale(2);
+  margin-left: auto;
+  align-self: flex-start;  
+}
+
+.completeStamp {
+  position: absolute;
+  color: red;
+  text-align: center;
+  margin-top: 40px;
+  width: 300px;
+  visibility: hidden;
+
+  
+}
+
+
 
 .titleField {
   padding: 10px;
   border-bottom: 1px solid gold;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+
 }
+
 
 .titleField h4 {
   margin: 0px;
@@ -24,7 +49,7 @@
 }
 
 .descriptionField  p {
-  color: black;
+  color: gold;
   padding: 10px;
   margin: 0px;
 
@@ -39,11 +64,32 @@
 }
 
 
+/* complete behavior */
+
+.complete .completeBtn{
+  display: none;
+
+}
+
+.complete .completeStamp {
+
+  visibility: visible;
+
+  
+}
+
+.taskCard.complete {
+  background-color: grey;
+}
 
 
+.complete p {
+  text-decoration: line-through;
+}
 
-
-
+.complete h4 {
+  text-decoration: line-through;
+}
 
 /* section colors */
 

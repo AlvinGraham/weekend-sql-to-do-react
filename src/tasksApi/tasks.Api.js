@@ -11,3 +11,7 @@ export const getTasks = () => {
 export const deleteTask = (taskId) => {
   return axios.delete(`/api/tasks/removeTask/${taskId}`);
 };
+
+export const completeTask = (taskId) => {
+  return axios.put(`/api/tasks/markComplete/${taskId}`);
+};
