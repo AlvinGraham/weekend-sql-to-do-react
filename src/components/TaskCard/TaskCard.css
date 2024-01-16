@@ -10,6 +10,7 @@
     margin: 10px 10px;
     background-color: black;
     color: gold;
+    contain: layout;
 }
 
 input[type=checkbox] {
@@ -22,9 +23,11 @@ input[type=checkbox] {
   position: absolute;
   color: red;
   text-align: center;
-  margin-top: 40px;
-  width: 300px;
+  /* margin-top: 40px; */
+  width: 300px; 
+  margin: 0px;
   visibility: hidden;
+  
 
   
 }
@@ -74,6 +77,8 @@ input[type=checkbox] {
 .complete .completeStamp {
 
   visibility: visible;
+  position: absolute;
+  top: 50%;
 
   
 }
