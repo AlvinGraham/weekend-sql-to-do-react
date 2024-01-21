@@ -1,18 +1,18 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const pool = require('../modules/pool.js');
+const pool = require("../modules/pool.js");
 
 // GET
 
 // GET entire task list
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
   // Set queryText
-  const queryText = `SELECT * FROM "task_list" ORDER BY "id";`;
+  const queryText = `SELECT * FROM "task_list" ORDER BY "complete" ASC;`;
 
   pool
     .query(queryText)
     .then((result) => {
-      console.log('Received query results from DB:');
+      console.log("Received query results from DB:");
       console.table(result.rows);
       res.send(result.rows);
     })
@@ -22,10 +22,9 @@ router.get('/', (req, res) => {
     });
 });
 
-
 // POST
 // POST new task
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   // Set queryText
   const queryText = `INSERT INTO task_list (title, description, priority, complete)
                     VALUES ($1, $2, $3, $4);`;
@@ -34,13 +33,13 @@ router.post('/', (req, res) => {
     req.body.title,
     req.body.description,
     req.body.priority,
-    req.body.complete
+    req.body.complete,
   ];
 
   pool
     .query(queryText, queryArgs)
     .then((response) => {
-      console.log('Task successfuly created:');
+      console.log("Task successfuly created:");
       console.table(queryArgs);
       res.sendStatus(201);
     })
@@ -48,13 +47,11 @@ router.post('/', (req, res) => {
       console.error(`ERROR in '/' POST query: ${err}`);
       res.sendStatus(500);
     });
-  
-
-});  
+});
 
 // PUT
 // UPDATE to mark complete route
-router.put('/markComplete/:taskID', (req, res) => {
+router.put("/markComplete/:taskID", (req, res) => {
   // Set queryText
   const queryText = `UPDATE task_list SET complete = 'true' WHERE id = $1;`;
   const queryArgs = [req.params.taskID];
@@ -73,7 +70,7 @@ router.put('/markComplete/:taskID', (req, res) => {
 
 // DELETE
 // Delete an entry by ID
-router.delete('/removeTask/:taskID', (req, res) =>{
+router.delete("/removeTask/:taskID", (req, res) => {
   //set queryText
   const queryText = `DELETE FROM task_list WHERE id = $1;`;
   const queryArgs = [req.params.taskID];
@@ -88,8 +85,6 @@ router.delete('/removeTask/:taskID', (req, res) =>{
       console.error(`ERROR in '/removeTask/:taskID' query: ${err}`);
       res.sendStatus(500);
     });
-
-
 });
 
 module.exports = router;

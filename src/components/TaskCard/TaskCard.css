@@ -13,10 +13,11 @@
     contain: layout;
 }
 
-input[type=checkbox] {
-  transform: scale(2);
+.taskCard .checkBox {
+
   margin-left: auto;
   align-self: flex-start;  
+  padding: 0px;
 }
 
 .completeStamp {
@@ -27,9 +28,7 @@ input[type=checkbox] {
   width: 300px; 
   margin: 0px;
   visibility: hidden;
-  
-
-  
+  transform: rotate(-45deg)  
 }
 
 
@@ -39,7 +38,6 @@ input[type=checkbox] {
   border-bottom: 1px solid gold;
   border-radius: 10px 10px 0 0;
   display: flex;
-
 }
 
 
@@ -78,7 +76,7 @@ input[type=checkbox] {
 
   visibility: visible;
   position: absolute;
-  top: 50%;
+  top: 40%;
 
   
 }

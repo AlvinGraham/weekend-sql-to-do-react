@@ -50,6 +50,6 @@
   gap: 5px;
 }
 
-/* #buttonInputs {
-
-} */
+#buttonInputs {
+  box-shadow: 4px 4px 4px 1px grey;
+} 
