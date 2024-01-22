@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const postTask = (taskData) => {
-  return axios.post('/api/tasks', taskData);
+  return axios.post("/api/tasks", taskData);
 };
 
 export const getTasks = () => {
-  return axios.get('/api/tasks');
+  return axios.get("/api/tasks");
 };
 
 export const deleteTask = (taskId) => {

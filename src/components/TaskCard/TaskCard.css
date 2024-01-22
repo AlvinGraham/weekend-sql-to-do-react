@@ -1,22 +1,21 @@
 .taskCard {
-    border: 1px solid gold;
-    border-radius: 10px;;
-    min-height: 200px;
-    width: 300px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: start;
-    align-items: left;
-    margin: 10px 10px;
-    background-color: black;
-    color: gold;
-    contain: layout;
+  border: 1px solid gold;
+  border-radius: 10px;
+  min-height: 200px;
+  width: 300px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: left;
+  margin: 10px 10px;
+  background-color: black;
+  color: gold;
+  contain: layout;
 }
 
 .taskCard .checkBox {
-
   margin-left: auto;
-  align-self: flex-start;  
+  align-self: flex-start;
   padding: 0px;
 }
 
@@ -25,13 +24,11 @@
   color: red;
   text-align: center;
   /* margin-top: 40px; */
-  width: 300px; 
+  width: 300px;
   margin: 0px;
   visibility: hidden;
-  transform: rotate(-45deg)  
+  transform: rotate(-45deg);
 }
-
-
 
 .titleField {
   padding: 10px;
@@ -39,7 +36,6 @@
   border-radius: 10px 10px 0 0;
   display: flex;
 }
-
 
 .titleField h4 {
   margin: 0px;
@@ -49,11 +45,10 @@
   margin: 0px;
 }
 
-.descriptionField  p {
+.descriptionField p {
   color: gold;
   padding: 10px;
   margin: 0px;
-
 }
 
 .buttonField {
@@ -64,27 +59,21 @@
   margin-bottom: 10px;
 }
 
-
 /* complete behavior */
 
-.complete .completeBtn{
+.complete .completeBtn {
   display: none;
-
 }
 
 .complete .completeStamp {
-
   visibility: visible;
   position: absolute;
   top: 40%;
-
-  
 }
 
 .taskCard.complete {
   background-color: grey;
 }
-
 
 .complete p {
   text-decoration: line-through;
@@ -97,7 +86,7 @@
 /* section colors */
 
 .red {
-  background-color: rgba(255, 0, 0, 0.500);
+  background-color: rgba(255, 0, 0, 0.5);
   color: black;
 }
 
@@ -107,6 +96,6 @@
 }
 
 .green {
-  background-color: rgba(0,255,0,.5);
+  background-color: rgba(0, 255, 0, 0.5);
   color: black;
 }

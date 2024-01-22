@@ -1,6 +1,6 @@
 .banner {
   min-height: 175px;
-  background-image: url('./horizons.png');
+  background-image: url("./horizons.png");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -12,7 +12,6 @@
   border-bottom: 2px solid gold;
 }
 
-
 .bannerHeader {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -21,4 +20,3 @@
   padding: 5px 10px;
   border-radius: 10px;
 }
-

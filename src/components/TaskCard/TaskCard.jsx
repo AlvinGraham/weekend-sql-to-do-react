@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { completeTask, deleteTask } from "../../tasksApi/tasks.Api";
 import "./TaskCard.css";
 import Checkbox from "@mui/material/Checkbox";
@@ -54,6 +54,7 @@ export default function TaskCard(props) {
           break;
       }
     }
+    props.refreshTaskListCallback();
   }; // end setTitleField()
 
   const completeBtnClk = (event) => {

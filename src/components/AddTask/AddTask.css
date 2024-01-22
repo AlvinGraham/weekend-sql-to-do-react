@@ -25,17 +25,14 @@
 }
 
 #titleLabel {
-
   display: flex;
   align-items: center;
-  
 }
 
 #descriptionLabel {
   height: 70px;
   display: flex;
   align-items: center;
-  
 }
 
 #descriptionInput {
@@ -52,4 +49,4 @@
 
 #buttonInputs {
   box-shadow: 4px 4px 4px 1px grey;
-} 
+}
