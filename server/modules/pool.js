@@ -1,6 +1,6 @@
 const pg = require("pg");
 let pool;
-if (process.env.DATABASE) {
+if (process.env.DATABASE_URL) {
   pool = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {
@@ -14,5 +14,7 @@ if (process.env.DATABASE) {
     database: process.env.DB_DATABASE || "weekend-to-do-app",
   });
 }
+
+console.log();
 
 module.exports = pool;
